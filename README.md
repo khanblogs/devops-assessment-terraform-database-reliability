@@ -1,3 +1,4 @@
+
 # DevOps Assessment — Terraform & Database Reliability
 
 Production-oriented DevOps assessment demonstrating:
@@ -16,7 +17,7 @@ Production-oriented DevOps assessment demonstrating:
 
 ---
 
-<img width="1536" height="1024" alt="architecture-devops" src="https://github.com/user-attachments/assets/22f7aabd-cb0e-4573-a7de-af8db0bb1357" />
+<img width="1672" height="941" alt="flow" src="https://github.com/user-attachments/assets/1b4d29c4-5694-4ea7-a5b0-95e75f91bc16" />
 
 
 ```text
@@ -32,7 +33,7 @@ Production-oriented DevOps assessment demonstrating:
 │                                               │
 │        Modules → Dev / Prod                   │
 │                                               │
-│  Network → ECS/ALB → RDS                      │
+│       Network → ECS/ALB → RDS                 │
 └───────────────────────┬───────────────────────┘
                         │
                         ▼
@@ -41,20 +42,20 @@ Production-oriented DevOps assessment demonstrating:
 │                                               │
 │ Internet → ALB → ECS Fargate → Private RDS    │
 │                                               │
-│ Public Subnets      Private Subnets           │
+│    Public Subnets      Private Subnets        │
 └───────────────────────────────────────────────┘
 
 
 ┌───────────────────────────────────────────────┐
 │             DATABASE RELIABILITY              │
 │                                               │
-│ Docker Compose                                │
-│      ↓                                        │
-│ PostgreSQL                                    │
-│      ↓                                        │
-│ Migration → Seed                              │
-│      ↓                                        │
-│ Query → Index → EXPLAIN ANALYZE               │
-│      ↓                                        │
-│ Backup → Fresh DB → Restore → Verify          │
+│           Docker Compose                      │
+│                ↓                              │
+│           PostgreSQL                          │
+│                ↓                              │
+│           Migration → Seed                    │
+│                ↓                              │
+│           Query → Index → EXPLAIN ANALYZE     │
+│                ↓                              │
+│          Backup → Fresh DB → Restore → Verify │
 └───────────────────────────────────────────────┘
