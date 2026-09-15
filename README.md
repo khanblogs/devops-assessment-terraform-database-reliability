@@ -20,13 +20,41 @@ Production-oriented DevOps assessment demonstrating:
 
 
 ```text
-Internet
-   |
-   v
-ALB
-   |
-   v
-ECS Fargate
-   |
-   v
-Private RDS PostgreSQL
+┌───────────────────────────────────────────────┐
+│                 GITHUB / CI                   │
+│                                               │
+│ PR → Actions → fmt → init → validate → plan   │
+└───────────────────────┬───────────────────────┘
+                        │
+                        ▼
+┌───────────────────────────────────────────────┐
+│                 TERRAFORM                     │
+│                                               │
+│        Modules → Dev / Prod                   │
+│                                               │
+│  Network → ECS/ALB → RDS                      │
+└───────────────────────┬───────────────────────┘
+                        │
+                        ▼
+┌───────────────────────────────────────────────┐
+│                  AWS                          │
+│                                               │
+│ Internet → ALB → ECS Fargate → Private RDS    │
+│                                               │
+│ Public Subnets      Private Subnets           │
+└───────────────────────────────────────────────┘
+
+
+┌───────────────────────────────────────────────┐
+│             DATABASE RELIABILITY              │
+│                                               │
+│ Docker Compose                                │
+│      ↓                                        │
+│ PostgreSQL                                    │
+│      ↓                                        │
+│ Migration → Seed                              │
+│      ↓                                        │
+│ Query → Index → EXPLAIN ANALYZE               │
+│      ↓                                        │
+│ Backup → Fresh DB → Restore → Verify          │
+└───────────────────────────────────────────────┘
