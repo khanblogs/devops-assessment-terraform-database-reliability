@@ -16,7 +16,8 @@ Production-oriented DevOps assessment demonstrating:
 
 ---
 
-## Architecture
+<img width="1536" height="1024" alt="architecture-devops" src="https://github.com/user-attachments/assets/22f7aabd-cb0e-4573-a7de-af8db0bb1357" />
+
 
 ```text
 Internet
